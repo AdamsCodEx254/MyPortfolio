@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Adams | Cybersecurity Enthusiast</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="matrix-bg"></div>
+    
+    <header>
+        <div class="logo">
+            <span class="terminal-prompt">&gt;</span> JA
+        </div>
+        <nav>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><button id="theme-toggle" class="theme-toggle">setTheme</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section home-section">
+            <div class="terminal-container">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-button close"></span>
+                        <span class="terminal-button minimize"></span>
+                        <span class="terminal-button maximize"></span>
+                    </div>
+                    <div class="terminal-title">joseph@adams:~</div>
+                </div>
+                <div class="terminal-content">
+                    <div id="terminal-text"></div>
+                    <div class="terminal-input-line">
+                        <span class="terminal-prompt">&gt;</span>
+                        <span id="welcome-text"></span>
+                        <span class="cursor">_</span>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-info hidden">
+                <h1>Joseph Adams</h1>
+                <p class="subtitle">Cybersecurity Enthusiast | Ethical Hacker | Digital Forensics Analyst</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2 class="section-title"><span class="terminal-prompt">&gt;</span> About<span class="cursor">_</span></h2>
+            <div class="about-container">
+                <div class="about-image">
+                    <div class="profile-avatar">
+                        <img src="img/profile-avatar.svg" alt="Joseph Adams" class="avatar-image">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <pre class="code-block">
+<code>const josephAdams = {
+  degree: "BSc Computer Science (2nd Class Upper)",
+  graduation: "November 2025",
+  passion: ["Cybersecurity", "Digital Forensics", "Ethical Hacking"],
+  skills: ["Python", "Kali Linux", "PGP", "Nmap", "SQL", "Bash"],
+  hobbies: ["Basketball 🏀", "Tech Meetups", "CTF Competitions"]
+};</code>
+                    </pre>
+                    <p class="about-description">
+                        I'm a Computer Science student with a focus on cybersecurity and ethical hacking. 
+                        My goal is to help organizations secure their digital assets and protect against cyber threats.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn glow-btn">Contact Me</a>
+                        <a href="#" class="btn outline-btn" id="resume-btn">Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2 class="section-title"><span class="terminal-prompt">&gt;</span> Projects<span class="cursor">_</span></h2>
+            <div class="projects-container">
+                <!-- Project cards will be added here via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2 class="section-title"><span class="terminal-prompt">&gt;</span> Certifications & Skills<span class="cursor">_</span></h2>
+            <div class="skills-container">
+                <div class="terminal-skills">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="terminal-button close"></span>
+                            <span class="terminal-button minimize"></span>
+                            <span class="terminal-button maximize"></span>
+                        </div>
+                        <div class="terminal-title">skills.sh</div>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="skill-log" id="skill-log">
+                            <!-- Skills will be added here via JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="section">
+            <h2 class="section-title"><span class="terminal-prompt">&gt;</span> Blog / Writeups<span class="cursor">_</span></h2>
+            <div class="blog-container">
+                <!-- Blog posts will be added here via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2 class="section-title"><span class="terminal-prompt">&gt;</span> Contact Me<span class="cursor">_</span></h2>
+            <div class="contact-container">
+                <div class="terminal-contact">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="terminal-button close"></span>
+                            <span class="terminal-button minimize"></span>
+                            <span class="terminal-button maximize"></span>
+                        </div>
+                        <div class="terminal-title">contact.sh</div>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="terminal-lines">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">&gt;</span> ping joseph.adams@email.com
+                            </div>
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">&gt;</span> traceroute github.com/josephadams
+                            </div>
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">&gt;</span> connect linkedin.com/in/joseph-adams
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn glow-btn">Send Packet</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Joseph Adams. All rights reserved.</p>
+            <p class="easter-egg">Try typing <span class="code">sudo access</span> anywhere on the page</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/terminal.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/skills.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+</body>
+</html>
