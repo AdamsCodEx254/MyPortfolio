@@ -233,43 +233,72 @@ function initContactForm() {
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
             
-            // In a real implementation, you would send this data to a server
-            // For now, we'll just show a success message
+            // Show loading state
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
             
-            // Create success message
-            const successMessage = document.createElement('div');
-            successMessage.className = 'form-success';
-            successMessage.innerHTML = `
-                <div class="terminal-line">
-                    <span class="terminal-prompt">&gt;</span> Message sent successfully!
-                </div>
-                <div class="terminal-line">
-                    <span class="terminal-prompt">&gt;</span> Thank you, ${name}. I will get back to you soon.
-                </div>
-            `;
-            
-            // Replace form with success message
-            contactForm.innerHTML = '';
-            contactForm.appendChild(successMessage);
-            
-            // Reset form after 5 seconds
-            setTimeout(() => {
-                contactForm.innerHTML = `
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn glow-btn">Send Packet</button>
-                `;
-            }, 5000);
+            // Send data to server
+            fetch('/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, email, message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Reset button
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+                
+                if (data.success) {
+                    // Create success message
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'form-success';
+                    successMessage.innerHTML = `
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">&gt;</span> Message sent successfully!
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">&gt;</span> Thank you, ${name}. I will get back to you soon.
+                        </div>
+                    `;
+                    
+                    // Replace form with success message
+                    contactForm.innerHTML = '';
+                    contactForm.appendChild(successMessage);
+                    
+                    // Reset form after 5 seconds
+                    setTimeout(() => {
+                        contactForm.innerHTML = `
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message:</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn glow-btn">Send Packet</button>
+                        `;
+                    }, 5000);
+                } else {
+                    // Show error message
+                    alert('Failed to send message. Please try again later.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+                alert('An error occurred. Please try again later.');
+            });
         });
     }
 }

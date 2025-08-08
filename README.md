@@ -1,5 +1,61 @@
 # Joseph Adams - Cybersecurity Portfolio
 
+## Overview
+This is a personal portfolio website for Joseph Adams, showcasing skills, projects, and experience in cybersecurity.
+
+## Features
+- Responsive design with mobile compatibility
+- Interactive terminal-style interface
+- Project showcase
+- Skills and certifications section
+- Blog/writeups section
+- Contact form with email functionality
+- Theme switching (Neon, Hacker, Retro)
+- Easter egg functionality
+
+## Contact Form Setup
+The contact form is configured to send emails using Nodemailer. Follow these steps to set it up:
+
+1. Install dependencies:
+   ```
+   npm install
+   ```
+
+2. Create a `.env` file in the root directory based on the `.env.example` template:
+   ```
+   cp .env.example .env
+   ```
+
+3. Edit the `.env` file with your email credentials:
+   ```
+   EMAIL_USER=your-email@gmail.com
+   EMAIL_PASS=your-app-password
+   RECIPIENT_EMAIL=your-email@gmail.com
+   PORT=3000
+   ```
+   
+   **Note for Gmail users:** You'll need to use an App Password instead of your regular password. 
+   [Learn how to create an App Password](https://support.google.com/accounts/answer/185833)
+
+4. Start the server:
+   ```
+   npm start
+   ```
+
+5. For development with auto-restart:
+   ```
+   npm run dev
+   ```
+
+## Usage
+After starting the server, visit `http://localhost:3000` in your browser. The contact form will now send emails to your specified email address when visitors submit the form.
+
+## Technologies Used
+- HTML5, CSS3, JavaScript
+- Node.js and Express
+- Nodemailer for email functionality
+- Vanilla Tilt for 3D card effects
+
 A personal portfolio website with a dark hacker theme for Joseph Adams, a graduating Computer Science student specializing in cybersecurity and ethical hacking.
 
 ## 🔐 Features
